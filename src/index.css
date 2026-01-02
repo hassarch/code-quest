@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Duolingo-inspired vibrant palette */
+    --background: 45 33% 97%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Vibrant Duolingo Green */
+    --primary: 102 82% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 102 82% 92%;
+    --primary-hover: 102 82% 35%;
+
+    /* Warm XP Orange */
+    --secondary: 35 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 35 100% 92%;
+
+    /* Achievement Purple */
+    --accent: 262 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 262 80% 92%;
+
+    /* Streak Fire */
+    --streak: 15 90% 55%;
+    --streak-foreground: 0 0% 100%;
+
+    /* Hearts/Lives Red */
+    --hearts: 0 85% 60%;
+    --hearts-foreground: 0 0% 100%;
+
+    /* Muted for disabled/inactive */
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 102 82% 40%;
+
+    --radius: 1rem;
+
+    /* Custom shadows */
+    --shadow-card: 0 4px 0 0 hsl(220 15% 85%);
+    --shadow-button: 0 4px 0 0 hsl(102 82% 30%);
+    --shadow-button-secondary: 0 4px 0 0 hsl(35 100% 38%);
+    --shadow-button-accent: 0 4px 0 0 hsl(262 80% 42%);
+
+    /* Gradients */
+    --gradient-xp: linear-gradient(135deg, hsl(35 100% 50%), hsl(45 100% 55%));
+    --gradient-streak: linear-gradient(135deg, hsl(15 90% 55%), hsl(35 100% 55%));
+    --gradient-level: linear-gradient(135deg, hsl(102 82% 40%), hsl(150 80% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(102 82% 95%) 0%, hsl(45 33% 97%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 102 82% 40%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 45 33% 97%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 45 33% 97%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 45 33% 97%;
+
+    --primary: 102 82% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 102 50% 20%;
+    --primary-hover: 102 82% 50%;
+
+    --secondary: 35 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 35 60% 20%;
+
+    --accent: 262 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 262 50% 20%;
+
+    --streak: 15 90% 60%;
+    --streak-foreground: 0 0% 100%;
+
+    --hearts: 0 85% 55%;
+    --hearts-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 33% 97%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 20%;
+    --ring: 102 82% 45%;
+
+    --shadow-card: 0 4px 0 0 hsl(220 20% 6%);
+    --shadow-button: 0 4px 0 0 hsl(102 82% 25%);
+    --shadow-button-secondary: 0 4px 0 0 hsl(35 100% 32%);
+    --shadow-button-accent: 0 4px 0 0 hsl(262 80% 35%);
+
+    --gradient-hero: linear-gradient(180deg, hsl(102 40% 12%) 0%, hsl(220 20% 10%) 100%);
+
+    --sidebar-background: 220 20% 12%;
+    --sidebar-foreground: 45 33% 90%;
+    --sidebar-primary: 102 82% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 45 33% 97%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 102 82% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .button-shadow {
+    box-shadow: var(--shadow-button);
+  }
+
+  .button-shadow-secondary {
+    box-shadow: var(--shadow-button-secondary);
+  }
+
+  .button-shadow-accent {
+    box-shadow: var(--shadow-button-accent);
+  }
+
+  .gradient-xp {
+    background: var(--gradient-xp);
+  }
+
+  .gradient-streak {
+    background: var(--gradient-streak);
+  }
+
+  .gradient-level {
+    background: var(--gradient-level);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
